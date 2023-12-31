@@ -4,7 +4,8 @@ use crate::custom_error::AocError;
 pub fn process(
     _input: &str,
 ) -> miette::Result<String, AocError> {
-    todo!("day 01 - part 1");
+    let result  =0;
+    Ok(result.to_string())
 }
 
 #[cfg(test)]
@@ -13,9 +14,8 @@ mod tests {
 
     #[test]
     fn test_process() -> miette::Result<()> {
-        todo!("haven't built test yet");
         let input = include_str!("../test_input1.txt");
-        assert_eq!("", process(input)?);
+        assert_eq!("5", process(input)?);
         Ok(())
     }
 }
