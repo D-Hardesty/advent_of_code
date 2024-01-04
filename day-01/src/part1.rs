@@ -1,26 +1,19 @@
 use crate::custom_error::AocError;
 
 #[tracing::instrument]
-pub fn process(
-    _input: &str,
-) -> miette::Result<String, AocError> {
-    let mut result: u32 = 0;
-
-    for line in _input.lines() {
-        let mut cur_val = String::new();
-
-        for char in line.chars() {
-            if char < ':' {
-                cur_val.push(char);
-            }
-        }
-        let mut digit = String::new();
-        digit.push(cur_val.chars().next().unwrap());
-        digit.push(cur_val.chars().last().unwrap());
-
-        let digit: u32 = digit.parse().unwrap();
-        result += digit;
-    }
+pub fn process(_input: &str) -> miette::Result<String, AocError> {
+    let result: u32 = _input
+        .lines()
+        .map(|line| line.chars().filter(|&ch| ch < ':').collect::<String>())
+        .map(|cur_val| {
+            let digit = format!(
+                "{}{}",
+                cur_val.chars().next().unwrap(),
+                cur_val.chars().last().unwrap()
+            );
+            digit.parse::<u32>().unwrap()
+        })
+        .sum();
 
     Ok(result.to_string())
 }
