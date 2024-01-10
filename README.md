@@ -1,6 +1,6 @@
 # Advent of Code 2023
 
-[Advent of Code](https://adventofcode.com/) is an annual coding challenge that takes place during the month of December. This repository contains my solutions for the Advent of Code puzzles.
+[Advent of Code](https://adventofcode.com/) is an annual coding challenge that takes place during the month of December. This repository contains my solutions for the Advent of Code 2023 puzzles.
 
 ## About Advent of Code
 
